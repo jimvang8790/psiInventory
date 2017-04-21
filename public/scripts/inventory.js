@@ -10,6 +10,10 @@ $( document ).ready( function(){
     }; // end objectToSend
     console.log( 'sending:', objectToSend );
     // send object to server via AJAX
+
+    // ***NOTE*** what is url '/addItem'
+    // ***NOTE*** what is type and what is POST
+    // ***NOTE*** what is data and what is objectToSend
     $.ajax({
       url: '/addItem',
       type: 'POST',
@@ -28,6 +32,10 @@ $( document ).ready( function(){
 
 function getInventory(){
   // make ajax call to server for inventory array
+  // ***NOTE*** what is url '/item'
+  // ***NOTE*** what is type and what is GET
+  // ***NOTE*** what is data and what is objectToSend
+  // ***NOTE*** what is response and where is inventory
   $.ajax({
     url: '/items',
     type: 'GET',
@@ -37,7 +45,7 @@ function getInventory(){
       $( '#outputDiv' ).empty();
       // loop through inventory and append each to outputDiv
       for (var i = 0; i < response.inventory.length; i++) {
-        $( '#outputDiv' ).append( '<p>The <strong>' + response.inventory[i].name + '</strong> is ' + 
+        $( '#outputDiv' ).append( '<p>The <strong>' + response.inventory[i].name + '</strong> is ' +
         response.inventory[i].description + '</p>' );
       } // end for
     } // end success
